@@ -262,7 +262,7 @@ def main():
     'signal_freq': 6000
   }
 
-  audio_source = 'microphone' # 'microphone' or 'generator'
+  audio_source = 'generator' # 'microphone' or 'generator'
 
   # end user setup
   ################
@@ -359,8 +359,15 @@ def main():
         plt.close()
 
         await asyncio.sleep(samples/sample_freq)
+
+        while True:
+          try:
+            pass
+          except KeyboardInterrupt:
+            break
+          
       except KeyboardInterrupt:
-        quit()
+        # quit()
         break
 
   print('decimator')
